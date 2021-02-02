@@ -8,26 +8,56 @@
 <body>
     <h1>In this project I learned how to display images in different projections</h1>
     
-    <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
-    <p>You can write a paragraph here</p>
+    <h2 style="color:red"></h2>
+    <p>To display the world map with each projection, I first added the vector data file I downloaded from Sakai as a layer in QGIS. Then I changed to each new projection, setting the same color palette every time. I then composed a print layout with each map and added a label with the projection name and EPSG number and exported it as a png file.</p>
     
     <h2>WGS84 Projection</h2>
-    <h3>Some observations</h3>
+    <h3>The WGS 84 projection preserves directionality, however the size and shape are distorted and become more so at the poles.</h3>
     <a href=".//maps/4326.png">
     <img src=".//maps/4326.png" alt="WGS84" width='500px'>
     </a>
     <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
+    <h3>The Aitoff projection does not preserve shape, area, or direction. The elliptical shape makes the lines of latitude curve around the poles.</h3>
     <a href=".//maps/54043.png">
     <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
     </a>
-    <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
-    <a href=".//maps/54043.png">
-    <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
+    <h2>Pseudo Mercator</h2>
+    <h3>The Pseudo Mercator projection is good for navigational maps because it perfectly preserves direction and angles. The size and shape are extremely distorted at the poles and lessens towards the equator.</h3>
+    <a href="./maps/3857projection.png">
+    <img src="./maps/3857projection.png" alt="3857" width='500px'>
     </a>
-    <h2 style="color:red">Now, you should <u>add the following projections on your own:</u></h2>
-    <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</h3>
+    <h2>Winkel Tripel</h2>
+    <h3>The Winkel Tripel projection has some minimal distortion of both shape and size, but does not preserve direction at all and therefore would not be a useful navigational map.</h3>
+    <a href="./53018projections.png">
+    <img src="./53018projections.png" alt="53018" width='500px'>
+    </a>
+    <h2>Cylindrical Equal Area</h2>
+    <h3>The Cylindrical Equal Area projection shows land masses with surface areas equal to those on a globe, but with shapes and directions that become increasingly distorted the further they are from the equator.</h3>
+    <a href="./maps/54034projection.png">
+    <img src="./maps/54034projection.png" alt="54034" width='500px'>
+    </a>
+    <h2>Equidistant Conic</h2>
+    <h3>The Equidistant Conic projection shows the globe as projected onto a cone shape. It does not preserve either shape or size, but does preserve angles within the chosen meridians.</h3>
+    <a href="./maps/54027projection.png">
+    <img src="./maps/54027projection.png" alt="54027" width='500px'>
+    </a>
+    <h2>Azimuthal Equidistant</h2>
+    <h3>The Azimuthal Equidistant projection shows meridians as straight lines and paralells as concentric circles at equal distance from each other. Because of this angles are preserved and so is distance, while shape and size are compromised.</h3>
+    <a href="./maps/102016projection.png">
+    <img src="./maps/102016projection.png" alt="102016" width='500px'>
+    </a>
+    <h2>Robinson</h2>
+    <h3>The Robinson projection preserves no specific aspects of the globe. The projection distorts size, shape, and directionality in favor of an aesthetically generalized represetation of the Earth.</h3>
+    <a href="./maps/54030projection.png">
+    <img src="./maps/54030projection.png" alt="54030" width='500px'>
+    </a>
+    <h2>Mollweide</h2>
+    <h3>The Mollweide projection preserves area while distorting shape and angles. It is more porportional than the Robinson projection, but because of the distortion of longitude and latitdue it is not a useful projection for navigation.</h3>
+    <a href="./maps/54009projection.png">
+    <img src="./maps/54009projection.png" alt="54009" width='500px'>
+    </a>
+    <h2 style="color:red"><u></u></h2>
+    <h3></h3>
     <p></p>
     <h2>Data used for this project</h2>
     <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
