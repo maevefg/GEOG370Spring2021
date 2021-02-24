@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+
+</head>
+<body>
+    <div id="mapid"></div>
+    <style>
+        #mapid{ width:900px; height: 500px;}
+    </style>
+
+    <script>
+        var map = L.map('mapid').setView([35.91, -79.05], 17);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {}).addTo(map)
+       
+        var Icon1 = L.icon({
+            iconUrl: 'https://riversagency.com/wp-content/themes/rivers-v4/images/work/old_work/beam/beam_logo.png',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+
+        var Popup1= "Murray Hall<br/><img src='https://marine.unc.edu/wp-content/uploads/sites/43/2012/09/Venable-Murray-Hall.jpg'width='100px'/>";
+
+        L.marker ([35.9097, -79.0518],{icon: Icon1}).addTo(map)
+            .bindPopup(Popup1)
+            // .openPopup();
+        
+        
+        var Icon2 = L.icon({
+            iconUrl: 'https://blackandblue.web.unc.edu/wp-content/uploads/sites/4410/2014/07/IMG_8997.jpg',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+
+        var Popup2= "Unsung Founders Memorial <br/><img src='https://static01.nyt.com/images/2019/04/08/us/08xp-unc/08xp-unc-superJumbo.jpg?quality=90&auto=webp'width='100px'/>";
+
+        L.marker ([35.9138, -79.0521],{icon: Icon2}).addTo(map)
+            .bindPopup(Popup2)
+            // .openPopup();
+
+        
+            var Icon3 = L.icon({
+            iconUrl: 'https://campusy.unc.edu/wp-content/uploads/sites/289/2016/04/Logo-e1467053355237.png',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+        });
+
+        var Popup3= "Campus Y <br/><img src='https://chapelboromedia.s3.amazonaws.com/uploads/2021/01/25155408/campus-y-building.jpg'width='100px'/>";
+
+        L.marker ([35.9114, -79.0512],{icon: Icon3}).addTo(map)
+            .bindPopup(Popup3)
+            // .openPopup();
+
+        var polygon = L.polygon ([
+            [35.9097, -79.0518],
+            [35.9138, -79.0521],
+            [35.9114, -79.0512]
+    ]).addTo(map);
+
+
+
+    
+
+    </script>
+    
+</body>
+</html>
